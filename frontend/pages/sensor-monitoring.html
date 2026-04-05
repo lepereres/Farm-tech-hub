@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Monitoring</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .gauge { margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Real-time Sensor Data</h1>
+    <div class="gauge">
+        <h2>Temperature</h2>
+        <div id="temperature-gauge"></div>
+    </div>
+    <div class="gauge">
+        <h2>Humidity</h2>
+        <div id="humidity-gauge"></div>
+    </div>
+    <div class="gauge">
+        <h2>Soil Moisture</h2>
+        <div id="soil-moisture-gauge"></div>
+    </div>
+
+    <script>
+        // JavaScript code to fetch and update sensor data every second
+        function updateSensorData() {
+            // Simulate fetching data from a sensor
+            let temperature = Math.random() * 100;
+            let humidity = Math.random() * 100;
+            let soilMoisture = Math.random() * 100;
+
+            document.getElementById('temperature-gauge').innerText = 'Temperature: ' + temperature.toFixed(2) + ' °C';
+            document.getElementById('humidity-gauge').innerText = 'Humidity: ' + humidity.toFixed(2) + ' %';
+            document.getElementById('soil-moisture-gauge').innerText = 'Soil Moisture: ' + soilMoisture.toFixed(2) + ' %';
+        }
+
+        setInterval(updateSensorData, 1000);
+        updateSensorData(); // initial call
+    </script>
+</body>
+</html>
